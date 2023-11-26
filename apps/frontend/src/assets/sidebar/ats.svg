@@ -1,0 +1,40 @@
+<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.904297" y="0.763184" width="23.9037" height="23.9037" rx="3.82459" fill="#E6F4E0"/>
+<circle cx="12.8575" cy="12.7149" r="7.33903" stroke="url(#paint0_angular_263_4510)" stroke-width="1.28695"/>
+<circle cx="12.8557" cy="12.7149" r="7.09303" fill="#FDFFFC"/>
+<circle cx="12.8567" cy="12.7149" r="4.58424" fill="url(#paint1_radial_263_4510)"/>
+<g filter="url(#filter0_d_263_4510)">
+<circle cx="12.8572" cy="12.7149" r="1.5965" fill="#FDFFFC"/>
+</g>
+<g style="mix-blend-mode:multiply">
+<path d="M20.5696 14.9045C20.8401 13.898 20.9092 12.8483 20.7727 11.8152C20.6363 10.7821 20.2971 9.78586 19.7744 8.88345L12.8811 12.8509L20.5696 14.9045Z" fill="url(#paint2_angular_263_4510)" fill-opacity="0.8"/>
+</g>
+<defs>
+<filter id="filter0_d_263_4510" x="11.0548" y="10.9125" width="3.60518" height="3.60494" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="0.102956"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.608056 0 0 0 0 0.829167 0 0 0 0 0.642664 0 0 0 0.8 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_263_4510"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_263_4510" result="shape"/>
+</filter>
+<radialGradient id="paint0_angular_263_4510" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.8575 12.7149) rotate(-90) scale(9.20247)">
+<stop offset="0.000185562" stop-color="#31BA46"/>
+<stop offset="0.817708" stop-color="#3ED4DE" stop-opacity="0.0864049"/>
+<stop offset="1" stop-color="#94EDA2" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint1_radial_263_4510" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(14.7931 7.14263) rotate(141.151) scale(11.2144)">
+<stop stop-color="#3ABB5A"/>
+<stop offset="0.520833" stop-color="#66D7B3"/>
+<stop offset="0.880208" stop-color="#89C4FB" stop-opacity="0.3"/>
+<stop offset="1" stop-color="#58D878" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="paint2_angular_263_4510" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.8811 12.8509) rotate(14.8705) scale(9.87363 9.84684)">
+<stop stop-color="white" stop-opacity="0"/>
+<stop offset="0.84375" stop-color="white" stop-opacity="0"/>
+<stop offset="1" stop-color="#82E992"/>
+</radialGradient>
+</defs>
+</svg>
