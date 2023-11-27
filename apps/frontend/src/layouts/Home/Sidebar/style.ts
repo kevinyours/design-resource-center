@@ -12,14 +12,18 @@ export const Content = styled.div`
   height: calc(100vh - 48px);
 `;
 
-export const NavTitle = styled.h3`
-  font-weight: 600;
-  font-size: 12px;
+export const NavTitle = styled.h4`
+  margin: 12px 0 0;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  color: ${({ theme }) => theme.colors.light_gray70};
 `;
 
 export const NavWrapper = styled.div<{ hasBottomBorder?: boolean }>`
-  margin: 6px 0 28px;
-  padding-bottom: 20px;
+  padding: 12px 0;
   box-sizing: border-box;
   border-bottom: ${({ hasBottomBorder }) =>
     hasBottomBorder ? `1px solid #e0e0e0` : `none`};

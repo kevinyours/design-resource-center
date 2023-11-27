@@ -1,14 +1,12 @@
 import { ReactComponent as Vision } from '@assets/logos/vision.svg';
-import { ReactComponent as ACCA } from '@assets/sidebar/acca.svg';
-import { ReactComponent as ATS } from '@assets/sidebar/ats.svg';
-import { ReactComponent as InHR } from '@assets/sidebar/inhr.svg';
-import { ReactComponent as JOBDA } from '@assets/sidebar/jobda.svg';
-import { ReactComponent as JOBDA_DEV } from '@assets/sidebar/jobda_dev.svg';
-import { ReactComponent as SpaceShip } from '@assets/sidebar/spaceship.svg';
-import { ReactComponent as Speaker } from '@assets/sidebar/speaker.svg';
+import { ReactComponent as Folder } from '@assets/sidebar/folder.svg';
+import { ReactComponent as Graphic } from '@assets/sidebar/graphic.svg';
+import { ReactComponent as Icon } from '@assets/sidebar/icon.svg';
+import { ReactComponent as Photo } from '@assets/sidebar/photo.svg';
+import { ReactComponent as Video } from '@assets/sidebar/video.svg';
+import Accordion from '@components/Accordion';
 import SearchField from '@components/SearchField';
 import type { FC } from 'react';
-import NavItem from './Item';
 import { Container, Content, NavTitle, NavWrapper } from './style';
 
 const Sidebar: FC = () => {
@@ -16,46 +14,41 @@ const Sidebar: FC = () => {
     <Container>
       <Content>
         <Vision />
-        <SearchField placeholder='검색어' />
+        <SearchField
+          placeholder='검색어'
+          withIcon={true}
+          style={{ marginTop: 40 }}
+        />
         <NavWrapper hasBottomBorder={true}>
-          <NavItem
-            icon={<SpaceShip style={{ width: 24, height: 24 }} />}
-            name={'전체'}
-            totalCount={1234}
+          <NavTitle>카테고리</NavTitle>
+          <Accordion
+            icon={<Icon style={{ width: 32, height: 32 }} />}
+            name='아이콘'
+            items={[]}
           />
-          <NavItem
-            icon={<SpaceShip style={{ width: 24, height: 24 }} />}
-            name={'Icon'}
-            totalCount={23}
+          <Accordion
+            icon={<Video style={{ width: 32, height: 32 }} />}
+            name='영상'
+            items={[]}
           />
-          <NavItem
-            icon={<SpaceShip style={{ width: 24, height: 24 }} />}
-            name={'3D Grahic'}
-            totalCount={77}
+          <Accordion
+            icon={<Photo style={{ width: 32, height: 32 }} />}
+            name='사진'
+            items={[]}
           />
-          <NavItem
-            icon={<SpaceShip style={{ width: 24, height: 24 }} />}
-            name={'2D Grahic'}
-            totalCount={146}
+          <Accordion
+            icon={<Graphic style={{ width: 32, height: 32 }} />}
+            name='그래픽'
+            items={[]}
           />
-          <NavItem
-            icon={<SpaceShip style={{ width: 24, height: 24 }} />}
-            name={'Illust'}
-            totalCount={234}
-          />
-          <NavItem
-            icon={<SpaceShip style={{ width: 24, height: 24 }} />}
-            name={'Movie'}
-            totalCount={75}
-          />
-          <NavItem
-            icon={<SpaceShip style={{ width: 24, height: 24 }} />}
-            name={'Photo'}
-            totalCount={123}
+          <Accordion
+            icon={<Folder style={{ width: 32, height: 32 }} />}
+            name='기타'
+            items={[]}
           />
         </NavWrapper>
-        <NavTitle>제품별 필터</NavTitle>
-        <NavWrapper>
+        <NavTitle>제품 필터</NavTitle>
+        {/* <NavWrapper>
           <NavItem
             icon={<InHR style={{ width: 24, height: 24 }} />}
             name={'INHR+'}
@@ -91,7 +84,7 @@ const Sidebar: FC = () => {
             icon={<Speaker style={{ width: 24, height: 24 }} />}
             name={'이런거 만들어 주세요!'}
           />
-        </NavWrapper>
+        </NavWrapper> */}
       </Content>
     </Container>
   );
