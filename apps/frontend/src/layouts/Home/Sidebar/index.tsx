@@ -1,12 +1,9 @@
 import { ReactComponent as Vision } from '@assets/logos/vision.svg';
-import { ReactComponent as Folder } from '@assets/sidebar/folder.svg';
-import { ReactComponent as Graphic } from '@assets/sidebar/graphic.svg';
-import { ReactComponent as Icon } from '@assets/sidebar/icon.svg';
-import { ReactComponent as Photo } from '@assets/sidebar/photo.svg';
-import { ReactComponent as Video } from '@assets/sidebar/video.svg';
 import Accordion from '@components/Accordion';
+import Filter from '@components/Filter';
 import SearchField from '@components/SearchField';
 import type { FC } from 'react';
+import { SidebarItems } from './config';
 import { Container, Content, NavTitle, NavWrapper } from './style';
 
 const Sidebar: FC = () => {
@@ -21,33 +18,14 @@ const Sidebar: FC = () => {
         />
         <NavWrapper hasBottomBorder={true}>
           <NavTitle>카테고리</NavTitle>
-          <Accordion
-            icon={<Icon style={{ width: 32, height: 32 }} />}
-            name='아이콘'
-            items={[]}
-          />
-          <Accordion
-            icon={<Video style={{ width: 32, height: 32 }} />}
-            name='영상'
-            items={[]}
-          />
-          <Accordion
-            icon={<Photo style={{ width: 32, height: 32 }} />}
-            name='사진'
-            items={[]}
-          />
-          <Accordion
-            icon={<Graphic style={{ width: 32, height: 32 }} />}
-            name='그래픽'
-            items={[]}
-          />
-          <Accordion
-            icon={<Folder style={{ width: 32, height: 32 }} />}
-            name='기타'
-            items={[]}
-          />
+          {SidebarItems.map((props) => (
+            <Accordion {...props} />
+          ))}
         </NavWrapper>
         <NavTitle>제품 필터</NavTitle>
+        <NavWrapper>
+          <Filter />
+        </NavWrapper>
         {/* <NavWrapper>
           <NavItem
             icon={<InHR style={{ width: 24, height: 24 }} />}

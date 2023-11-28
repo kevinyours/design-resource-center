@@ -49,8 +49,9 @@ export const Item = styled.a<{
   padding: 6px 10px;
   line-height: 24px;
   border-radius: 6px;
-  background: transparent;
+
   padding-left: ${({ hasLeftPadding }) => (hasLeftPadding ? 32 : 0)}px;
+  background: ${({ isActive }) => (isActive ? '#e3ebff' : 'transparent')};
 
   span {
     margin-left: 16px;

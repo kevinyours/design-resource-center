@@ -5,13 +5,24 @@ import { type FC, type ReactNode } from 'react';
 import { Container, Content, Header, Item } from './style';
 import { useAccordion } from './useAccordion';
 
-interface AccordionProps {
+export type AccordionItemProps = {
+  value: string;
+  key: string;
+};
+
+export interface AccordionProps {
   icon?: ReactNode;
   name: string;
-  items?: Array<{ value: string; key: string; isActive?: boolean }>;
+  items?: Array<AccordionItemProps>;
+  activeKey?: string;
 }
 
-const Accordion: FC<AccordionProps> = ({ icon, name, items = [] }) => {
+const Accordion: FC<AccordionProps> = ({
+  icon,
+  name,
+  activeKey,
+  items = [],
+}) => {
   const { isOpen, toggle } = useAccordion();
 
   return (
@@ -22,7 +33,15 @@ const Accordion: FC<AccordionProps> = ({ icon, name, items = [] }) => {
         <ArrowDown style={{ marginLeft: 'auto' }} />
       </Header>
       <Content isOpen={isOpen}>
-        <Item hasLeftPadding={true}>
+        {items.map(({ value, key }) => {
+          return (
+            <Item key={key} hasLeftPadding={key !== activeKey}>
+              {key === activeKey && <ArrowRight />}
+              <span>{value}</span>
+            </Item>
+          );
+        })}
+        {/* <Item hasLeftPadding={true}>
           <span>전체</span>
         </Item>
         <Item>
@@ -31,7 +50,7 @@ const Accordion: FC<AccordionProps> = ({ icon, name, items = [] }) => {
         </Item>
         <Item hasLeftPadding={true}>
           <span>Glyph icon</span>
-        </Item>
+        </Item> */}
       </Content>
     </Container>
   );
