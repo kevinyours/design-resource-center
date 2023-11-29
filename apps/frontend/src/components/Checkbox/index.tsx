@@ -36,13 +36,7 @@ const Checkbox: FC<CheckboxProps> = (
       }
       style={style}
     >
-      <Input
-        {...rest}
-        id={id}
-        ref={ref}
-        type={'checkbox'}
-        // readOnly={true}
-      />
+      <Input {...rest} id={id} ref={ref} type={'checkbox'} />
       <Content isChecked={isActive}>
         <Icon viewBox='0 0 24 24'>
           <polyline points='19 7 10 17 5 12' />
