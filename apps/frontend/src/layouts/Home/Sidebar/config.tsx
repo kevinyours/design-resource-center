@@ -14,7 +14,7 @@ import type { FilterProps } from '../../../components/Filter';
 
 const svgStyle = { width: 32, height: 32 };
 
-export const SidebarItems: AccordionProps[] = [
+export const SidebarCategories: AccordionProps[] = [
   {
     icon: <Icon style={svgStyle} />,
     name: '아이콘',

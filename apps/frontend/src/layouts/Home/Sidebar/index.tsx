@@ -1,13 +1,15 @@
 import { ReactComponent as Vision } from '@assets/logos/vision.svg';
+import { ReactComponent as Setting } from '@assets/sidebar/setting.svg';
+import { ReactComponent as User } from '@assets/sidebar/user.svg';
 import Accordion from '@components/Accordion';
 import Filter from '@components/Filter';
 import SearchField from '@components/SearchField';
 import { productFilters } from '@stores/atoms/filters';
 import type { FC } from 'react';
 import { useRecoilValue } from 'recoil';
-import { SidebarFilters, SidebarItems } from './config';
+import { SidebarCategories, SidebarFilters } from './config';
 import { useSidebar } from './hooks';
-import { Container, Content, NavTitle, NavWrapper } from './style';
+import { Account, Container, Content, NavTitle, NavWrapper } from './style';
 
 const Sidebar: FC = () => {
   const currentFilterState = useRecoilValue(productFilters);
@@ -24,7 +26,7 @@ const Sidebar: FC = () => {
         />
         <NavWrapper hasBottomBorder={true}>
           <NavTitle>카테고리</NavTitle>
-          {SidebarItems.map((props, idx) => (
+          {SidebarCategories.map((props, idx) => (
             <Accordion {...props} key={`sidebar-category-${idx}`} />
           ))}
         </NavWrapper>
@@ -40,6 +42,11 @@ const Sidebar: FC = () => {
             />
           ))}
         </NavWrapper>
+        <Account>
+          <User />
+          <span>조한정</span>
+          <Setting style={{ marginLeft: 'auto' }} />
+        </Account>
       </Content>
     </Container>
   );

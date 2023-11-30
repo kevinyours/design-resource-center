@@ -28,3 +28,24 @@ export const NavWrapper = styled.div<{ hasBottomBorder?: boolean }>`
   border-bottom: ${({ hasBottomBorder }) =>
     hasBottomBorder ? `1px solid #e0e0e0` : `none`};
 `;
+
+export const Account = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+  color: ${({ theme }) => theme.colors.dark_gray80};
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 6px;
+    background: #eaeaea;
+    color: #000000;
+  }
+
+  span {
+    margin-left: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
