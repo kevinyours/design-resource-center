@@ -2,35 +2,46 @@ import { css } from '@emotion/react';
 import emotionReset from 'emotion-reset';
 
 export const GlobalStyle = css`
-	${emotionReset}
+  ${emotionReset}
 
-	*, *::after, *::before {
-		box-sizing: border-box;
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
-		font-smoothing: antialiased;
-	}
+  *, *::after, *::before {
+    box-sizing: border-box;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+  }
 
-	html,
-	body {
-		padding: 0;
-		margin: 0;
-		font-style: normal;
-		font-weight: 400;
-		font-family:
-			Pretendard,
-			-apple-system,
-			system-ui,
-			sans-serif;
-	}
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-family:
+      'Pretendard Variable',
+      Pretendard,
+      -apple-system,
+      BlinkMacSystemFont,
+      system-ui,
+      Roboto,
+      'Helvetica Neue',
+      'Segoe UI',
+      'Apple SD Gothic Neo',
+      'Noto Sans KR',
+      'Malgun Gothic',
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
+      sans-serif;
+  }
 
-	a {
-		color: inherit;
-		text-decoration: none;
-	}
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-	code {
-		font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-			monospace;
-	}
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
 `;

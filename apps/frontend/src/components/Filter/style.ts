@@ -11,17 +11,20 @@ export const Container = styled.a`
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  color: #6a7081;
+  color: ${({ theme }) => theme.colors.dark_gray80};
   cursor: pointer;
 
   &:hover {
-    color: #000000;
     border-radius: 6px;
     background: #eaeaea;
+    color: #000000;
   }
 
   span {
-    margin-left: 14px;
+    margin-left: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   span:not(:first-of-type) {

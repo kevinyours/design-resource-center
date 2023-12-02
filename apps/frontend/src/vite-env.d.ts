@@ -1,17 +1,17 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-	readonly VITE_APP_TITLE: string;
+  readonly VITE_APP_TITLE: string;
 }
 
 interface ImportMeta {
-	readonly env: ImportMetaEnv;
+  readonly env: ImportMetaEnv;
 }
 
 declare module '*.svg' {
-	import React = require('react');
+  import React = require('react');
 
-	export const ReactComponent: REact.FC<React.SVGProps<SVGSVGElement>>;
-	const src: string;
-	export default src;
+  export const ReactComponent: React.FC<React.SVGProps<SVGSVGElement>>;
+  const src: string;
+  export default src;
 }

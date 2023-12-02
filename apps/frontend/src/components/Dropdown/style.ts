@@ -29,22 +29,3 @@ export const Container = styled.div<{ disabled?: boolean }>`
       ${({ theme, disabled }) => !disabled && theme.colors.navy100};
   }
 `;
-
-export const Input = styled.input`
-  margin-left: 8px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  border: none;
-  outline: none;
-  background: transparent;
-  cursor: pointer;
-
-  :disabled {
-    cursor: not-allowed;
-  }
-
-  ::placeholder {
-    color: ${({ theme }) => theme.colors.ligth_gray60};
-  }
-`;
