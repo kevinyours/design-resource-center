@@ -26,7 +26,6 @@ export const Header = styled.div`
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
-    font-family: Pretendard;
   }
 `;
 
@@ -59,7 +58,6 @@ export const Item = styled.a<{
     font-weight: 500;
     font-size: 16px;
     line-height: 24px;
-    font-family: Pretendard;
   }
 
   :hover {

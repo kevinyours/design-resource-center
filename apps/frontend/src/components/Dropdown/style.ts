@@ -4,6 +4,7 @@ export const Container = styled.div<{ disabled?: boolean }>`
   position: relative;
   display: flex;
   align-items: center;
+  min-width: 83px;
   height: 36px;
   box-sizing: border-box;
   padding: 8px;
@@ -27,5 +28,12 @@ export const Container = styled.div<{ disabled?: boolean }>`
   :hover {
     border: 1px solid
       ${({ theme, disabled }) => !disabled && theme.colors.navy100};
+  }
+
+  span {
+    color: ${({ theme }) => theme.colors.dark_gray80};
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
   }
 `;

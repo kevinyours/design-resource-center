@@ -2,9 +2,13 @@ import { css } from '@emotion/react';
 import emotionReset from 'emotion-reset';
 
 export const GlobalStyle = css`
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+
   ${emotionReset}
 
-  *, *::after, *::before {
+  *,
+  *::after,
+  *::before {
     box-sizing: border-box;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;

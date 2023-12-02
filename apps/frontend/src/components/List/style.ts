@@ -4,8 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-width: 240px;
-  width: 100%;
+  width: max-content;
   height: max-content;
   box-sizing: border-box;
   padding: 8px;
@@ -21,6 +20,7 @@ export const Item = styled.div`
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+  border-radius: 4px;
   color: ${({ theme }) => theme.colors.dark_gray80};
   cursor: pointer;
 

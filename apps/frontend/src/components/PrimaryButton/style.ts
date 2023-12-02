@@ -1,26 +1,21 @@
 import styled from '@emotion/styled';
 import type { Colors } from '@styles/colors';
+import { ButtonThemes, type ButtonThemeTypes } from './theme';
 
-export const Container = styled.button<{ backgroundColor?: typeof Colors }>`
-  width: 100%;
+export const Container = styled.button<{
+  backgroundColor?: typeof Colors;
+  buttonTheme: ButtonThemeTypes;
+}>`
+  width: max-content;
   min-height: 34px;
   box-sizing: border-box;
-  padding: 20px 8px;
+  padding: 8px 20px;
   border-radius: 4px;
   border: solid 2px transparent;
   outline: none;
-  background: ${({ backgroundColor, theme }) =>
-    backgroundColor ?? theme.colors.blue100};
   cursor: pointer;
 
-  :active {
-    opacity: 0.8;
-    border: solid 2px #8fbcff;
-  }
-
-  :hover {
-    border: solid 2px #8fbcff;
-  }
+  ${({ buttonTheme }) => ButtonThemes[buttonTheme]}
 
   :disabled {
     cursor: not-allowed;

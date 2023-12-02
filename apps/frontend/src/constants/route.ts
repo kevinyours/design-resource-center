@@ -6,4 +6,7 @@ export const PAGES = {
   AUTH: {
     LOGIN: '/login',
   },
+  ADMIN: {
+    HOME: '/admin',
+  },
 };

@@ -6,6 +6,7 @@ import type {
   PropsWithChildren,
 } from 'react';
 import { Container } from './style';
+import { ButtonThemeTypes } from './theme';
 
 interface PrimaryButtonProps
   extends DetailedHTMLProps<
@@ -13,15 +14,17 @@ interface PrimaryButtonProps
     HTMLButtonElement
   > {
   themeColor?: typeof Colors;
+  buttonTheme?: ButtonThemeTypes;
 }
 
 const PrimatyButton: FC<PropsWithChildren<PrimaryButtonProps>> = ({
   themeColor,
+  buttonTheme = ButtonThemeTypes.PRIMARY,
   children,
   ...rest
 }) => {
   return (
-    <Container backgroundColor={themeColor} {...rest}>
+    <Container backgroundColor={themeColor} buttonTheme={buttonTheme} {...rest}>
       {children}
     </Container>
   );

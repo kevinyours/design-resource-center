@@ -41,16 +41,6 @@ const Accordion: FC<AccordionProps> = ({
             </Item>
           );
         })}
-        {/* <Item hasLeftPadding={true}>
-          <span>전체</span>
-        </Item>
-        <Item>
-          <ArrowRight />
-          <span>Flat icon</span>
-        </Item>
-        <Item hasLeftPadding={true}>
-          <span>Glyph icon</span>
-        </Item> */}
       </Content>
     </Container>
   );
