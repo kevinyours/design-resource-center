@@ -1,17 +1,19 @@
 import Empty from '@components/Empty';
-import FloatingController from '@components/FloatingController';
+import FloatingEditor from '@components/FloatingEditor';
 import type { FC } from 'react';
 import Header from './Header';
+import Search from './Search';
 import { Container, Content } from './style';
 
 const AdminPage: FC = () => {
   return (
     <Container>
       <Header />
+      <Search />
       <Content>
         <Empty />
       </Content>
-      <FloatingController style={{ position: 'absolute', bottom: 120 }} />
+      <FloatingEditor style={{ position: 'absolute', bottom: 120 }} />
     </Container>
   );
 };

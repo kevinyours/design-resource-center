@@ -22,7 +22,8 @@
 		"storybook": "pnpm -F @ats/docs dev",
 		"be": "pnpm -F @design-resource-center/backend",
 		"fe": "pnpm -F @design-resource-center/frontend",
-		"web": "pnpm fe dev"
+		"web": "pnpm fe dev",
+		"server": "pnpm be dev"
 	},
 	"devDependencies": {
 		"turbo": "latest"

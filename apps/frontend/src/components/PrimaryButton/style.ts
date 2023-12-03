@@ -9,7 +9,7 @@ export const Container = styled.button<{
   width: max-content;
   min-height: 34px;
   box-sizing: border-box;
-  padding: 8px 20px;
+  padding: 8px 14px;
   border-radius: 4px;
   border: solid 2px transparent;
   outline: none;
