@@ -7,8 +7,9 @@ export const Container = styled.section`
 `;
 
 export const Content = styled.div`
-  box-sizing: border-box;
-  padding-top: 48px;
-  width: 100%;
+  width: max-content;
   height: 100%;
+  box-sizing: border-box;
+  padding: 48px 1px 0 1px;
+  overflow-y: scroll;
 `;

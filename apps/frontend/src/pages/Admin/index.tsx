@@ -1,8 +1,9 @@
-import FloatingEditor from '@components/FloatingEditor';
+import FileUploadModal from '@components/Modals/Upload';
 import Table from '@components/Table';
 import type { FC } from 'react';
 import Header from './Header';
 import Search from './Search';
+import { tableBodyMockData } from './mock';
 import { Container, Content } from './style';
 
 const AdminPage: FC = () => {
@@ -11,9 +12,10 @@ const AdminPage: FC = () => {
       <Header />
       <Search />
       <Content>
-        <Table />
+        <Table data={tableBodyMockData} />
       </Content>
-      <FloatingEditor style={{ position: 'absolute', bottom: 120 }} />
+      <FileUploadModal />
+      {/* <FloatingEditor style={{ position: 'absolute', bottom: 120 }} /> */}
     </Container>
   );
 };

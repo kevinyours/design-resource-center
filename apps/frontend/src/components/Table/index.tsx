@@ -1,23 +1,41 @@
 import Checkbox from '@components/Checkbox';
-import type { FC } from 'react';
-import { Headers } from './config';
-import { Body, Container, Head } from './style';
+import Tag from '@components/Tag';
+import type { FC, ReactElement } from 'react';
+import { TableHeaders } from './config';
+import { Body, Container, Data, DataRow, Head } from './style';
 
-interface TableProps {}
+export interface TableDataProps {
+  thumbnail: ReactElement;
+  name: string;
+  category: string;
+  ext: string;
+  product: string;
+  size: string;
+  tags: string[];
+  createdAt: string;
+}
 
-const Table: FC<TableProps> = () => {
+interface TableProps {
+  data?: TableDataProps[];
+}
+
+const Table: FC<TableProps> = ({ data = [] }) => {
   return (
     <Container>
       <Head>
         <tr>
-          <th scope='column'>
+          <th scope='column' style={{ width: 56 }}>
             <span>
               <Checkbox />
             </span>
           </th>
-          {Headers.map(({ key, value, width, icon }) => {
+          {TableHeaders.map(({ key, value, width, icon }) => {
             return (
-              <th scope='column' key={`admin-table-${key}`} style={{ width }}>
+              <th
+                scope='column'
+                key={`admin-table-head-th-${key}`}
+                style={{ width }}
+              >
                 {value}
                 {icon}
               </th>
@@ -25,7 +43,43 @@ const Table: FC<TableProps> = () => {
           })}
         </tr>
       </Head>
-      <Body></Body>
+      <Body>
+        {data.map(
+          (
+            { thumbnail, name, category, ext, product, size, tags, createdAt },
+            idx,
+          ) => {
+            return (
+              <DataRow key={`admin-table-body-tr-${idx}`}>
+                <Data>
+                  <span>
+                    <Checkbox />
+                  </span>
+                </Data>
+                <Data>{thumbnail}</Data>
+                <Data>{name}</Data>
+                <Data>{category}</Data>
+                <Data>{ext}</Data>
+                <Data>{product}</Data>
+                <Data>{size}</Data>
+                <Data
+                  style={{
+                    display: 'flex',
+                    gap: 8,
+                    alignItems: 'center',
+                    overflow: 'hidden',
+                  }}
+                >
+                  {tags.map((tag) => (
+                    <Tag>{tag}</Tag>
+                  ))}
+                </Data>
+                <Data>{createdAt}</Data>
+              </DataRow>
+            );
+          },
+        )}
+      </Body>
     </Container>
   );
 };

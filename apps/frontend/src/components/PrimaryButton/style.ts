@@ -18,7 +18,7 @@ export const Container = styled.button<{
   ${({ buttonTheme }) => ButtonThemes[buttonTheme]}
 
   :disabled {
-    cursor: not-allowed;
+    border: solid 2px #e2e6f0;
     background: ${({ theme }) => theme.colors.light_gray30};
     color: ${({ theme }) => theme.colors.ligth_gray40};
   }
