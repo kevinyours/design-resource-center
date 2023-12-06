@@ -26,6 +26,7 @@ const Checkbox: FC<CheckboxProps> = (
 ) => {
   return (
     <Container
+      as={'a'}
       data-testid={id}
       htmlFor={id}
       onClick={() =>
