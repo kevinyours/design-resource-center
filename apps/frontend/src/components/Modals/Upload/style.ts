@@ -25,7 +25,8 @@ export const Header = styled.div`
 `;
 
 export const Content = styled.div`
-  height: 540px;
+  min-height: 540px;
+  height: max-content;
   margin: 0 -32px;
   box-sizing: border-box;
   padding: 24px 32px;
@@ -40,31 +41,7 @@ export const Content = styled.div`
   }
 `;
 
-export const Dropzone = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 440px;
-  margin-top: 20px;
-  border: 2px dashed #cfd4de;
-  border-radius: 4px;
-  color: #a8acb4;
-  cursor: pointer;
-
-  p {
-    margin: 8px 0;
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 32px;
-  }
-
-  span {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-  }
-`;
+export const FileList = styled.div``;
 
 export const Footer = styled.div`
   height: max-content;
