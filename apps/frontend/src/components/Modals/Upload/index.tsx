@@ -1,16 +1,21 @@
 import { ReactComponent as CloseButton } from '@assets/icons/button_close.svg';
 import { ReactComponent as Folder } from '@assets/icons/folder_add_blue.svg';
-import { ReactComponent as DropzoneIcon } from '@assets/icons/icon_dragdrop_file.svg';
 import PrimatyButton from '@components/PrimaryButton';
+import { useFileUpload } from '@hooks/useFileUpload';
 import type { FC } from 'react';
-import { useDropzone } from 'react-dropzone';
 import ModalContainer from '../Shared/Container';
-import { Container, Content, Dropzone, Footer, Header } from './style';
+import Dropzone from './Dropzone';
+import Form from './Form';
+import { useFileUploadModal } from './hooks';
+import { Container, Content, Footer, Header } from './style';
 
-interface FileUploadModalProps {}
+interface FileUploadModalProps {
+  isOpen?: boolean;
+}
 
-const FileUploadModal: FC<FileUploadModalProps> = () => {
-  const { getRootProps, getInputProps } = useDropzone();
+const FileUploadModal: FC<FileUploadModalProps> = ({ isOpen = false }) => {
+  const { onDrop, fileList } = useFileUpload();
+  const { onNext, stage } = useFileUploadModal(isOpen);
 
   return (
     <ModalContainer>
@@ -21,14 +26,14 @@ const FileUploadModal: FC<FileUploadModalProps> = () => {
           <CloseButton style={{ marginLeft: 'auto', cursor: 'pointer' }} />
         </Header>
         <Content>
-          <span>파일을&nbsp;업로드&nbsp;하세요.</span>
-          <br />
-          <Dropzone {...getRootProps()}>
-            <input {...getInputProps()} />
-            <DropzoneIcon />
-            <p>파일&nbsp;선택</p>
-            <span>또는&nbsp;여기로&nbsp;파일을&nbsp;끌어오세요</span>
-          </Dropzone>
+          {stage === 0 && <Dropzone onDrop={onDrop} />}
+          {stage === 1 && (
+            <>
+              {fileList.map(() => (
+                <Form />
+              ))}
+            </>
+          )}
         </Content>
         <Footer>
           <PrimatyButton
